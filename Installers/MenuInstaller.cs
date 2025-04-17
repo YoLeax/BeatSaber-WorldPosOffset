@@ -1,5 +1,6 @@
 using Zenject;
 using WorldPosOffset.Menu;
+using WorldPosOffset.UI;
 
 namespace WorldPosOffset.Installers;
 
@@ -15,9 +16,11 @@ internal class MenuInstaller : Installer
         // The BindInterfacesTo shortcut is useful since you don't want to write out and remember every base type:
         // Container.Bind(typeof(IInitializable, typeof(IDisposable)).To<SettingsMenuManager>().AsSingle();
         // Is the same as:
-        Container.BindInterfacesTo<SettingsMenuManager>().AsSingle();
+        //Container.BindInterfacesTo<SettingsMenuManager>().AsSingle();
 
         // This will create a single instance of ExampleSettingsMenu, and lets it be injected into other types
-        Container.Bind<ExampleSettingsMenu>().AsSingle();
+        //Container.Bind<ExampleSettingsMenu>().AsSingle();
+        
+        Container.BindInterfacesTo<GameplayUI>().AsSingle();
     }
 }

@@ -1,0 +1,74 @@
+<bg xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='https://monkeymanboy.github.io/BSML-Docs/BSMLSchema.xsd'>
+    <vertical vertical-fit="PreferredSize" pref-width="90">
+        <toggle-setting text="Enabled"/>
+        <dropdown-list-setting text="Preset" choices="list-options"/>
+        
+        <horizontal pad-top="3">
+            <vertical pref-width="60" pad="1" bg="round-rect-panel" bg-alpha="0.5">
+                <horizontal>
+                    <text text="Left" align="Center"/>
+                    <text text="" align="Center"/>
+                    <text text="Right" align="Center"/>
+                </horizontal>
+                <horizontal>
+                    <background bg="panel-fade-gradient" bg-color="#c81717" bg-alpha="0.4">
+                        <clickable-text text="0.0" align="Center" size-delta-x="20"/>
+                    </background>
+                    <text text="X" align="Center" face-color="#c81717"/>
+                    <background bg="panel-fade-gradient" bg-color="#c81717" bg-alpha="0.4" local-scale="-1 -1 1">
+                        <clickable-text text="0.0" align="Center" size-delta-x="20" local-scale="-1 -1 1"/>
+                    </background>
+                </horizontal>
+                <horizontal>
+                    <background bg="panel-fade-gradient" bg-color="#00b616" bg-alpha="0.4">
+                        <clickable-text text="0.0" align="Center" size-delta-x="20"/>
+                    </background>
+                    <text text="Y" align="Center" face-color="#00b616"/>
+                    <background bg="panel-fade-gradient" bg-color="#00b616" bg-alpha="0.4" local-scale="-1 -1 1">
+                        <clickable-text text="0.0" align="Center" size-delta-x="20" local-scale="-1 -1 1"/>
+                    </background>
+                </horizontal>
+                <horizontal>
+                    <background bg="panel-fade-gradient" bg-color="#268ed2" bg-alpha="0.4">
+                        <clickable-text text="0.0" align="Center" size-delta-x="20"/>
+                    </background>
+                    <text text="Z" align="Center" face-color="#268ed2"/>
+                    <background bg="panel-fade-gradient" bg-color="#268ed2" bg-alpha="0.4" local-scale="-1 -1 1">
+                        <clickable-text text="0.0" align="Center" size-delta-x="20" local-scale="-1 -1 1"/>
+                    </background>
+                </horizontal>
+                <horizontal>
+                    <button text="Reset L" face-color="red" pref-width="15"/>
+                    <button text="Reset" face-color="red" pref-width="15"/>
+                    <button text="Reset R" face-color="red" pref-width="15"/>
+                </horizontal>
+            </vertical>
+            
+            <vertical min-width="4" pref-width="4"/>
+            
+            <vertical pref-width="26" pad="1" bg="round-rect-panel" bg-alpha="0.5">
+                <horizontal>
+                    <button text="- 0.1" pref-width="10" pref-height="8"/>
+                    <button text="+ 0.1" pref-width="10" pref-height="8"/>
+                </horizontal>
+                <horizontal>
+                    <button text="- 0.5" pref-width="10" pref-height="8"/>
+                    <button text="+ 0.5" pref-width="10" pref-height="8"/>
+                </horizontal>
+                <horizontal>
+                    <button text="- 1.0" pref-width="10" pref-height="8"/>
+                    <button text="+ 1.0" pref-width="10" pref-height="8"/>
+                </horizontal>
+                <horizontal>
+                    <button text="- 5.0" pref-width="10" pref-height="8"/>
+                    <button text="+ 5.0" pref-width="10" pref-height="8"/>
+                </horizontal>
+                <horizontal>
+                    <button text="- 10" pref-width="10" pref-height="8"/>
+                    <button text="+ 10" pref-width="10" pref-height="8"/>
+                </horizontal>
+            </vertical>
+        </horizontal>
+    </vertical>
+</bg>
