@@ -22,7 +22,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <EmbeddedResource Include="Menu\example.bsml"/>
         <EmbeddedResource Include="Menu\gameplayMenu.bsml" />
         <None Remove="UI\gameplayUI.bsml" />
     </ItemGroup>
