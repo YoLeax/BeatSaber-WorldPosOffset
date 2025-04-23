@@ -1,8 +1,8 @@
 <bg xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:noNamespaceSchemaLocation='https://monkeymanboy.github.io/BSML-Docs/BSMLSchema.xsd'>
     <vertical vertical-fit="PreferredSize" pref-width="90">
-        <toggle-setting text="Enabled"/>
-        <dropdown-list-setting text="Preset" choices="list-options"/>
+        <toggle-setting value="enabled" on-change="on_enabled_change" text="Enabled"/>
+        <dropdown-list-setting value="cur_preset" on-change="on_preset_change" options="preset_options" text="Preset"/>
         
         <horizontal pad-top="3">
             <vertical pref-width="60" pad="1" bg="round-rect-panel" bg-alpha="0.5">
@@ -12,36 +12,36 @@
                     <text text="Right" align="Center"/>
                 </horizontal>
                 <horizontal>
-                    <background bg="panel-fade-gradient" bg-color="#c81717" bg-alpha="0.4">
-                        <clickable-text text="0.0" align="Center" size-delta-x="20"/>
+                    <background id="left_x_bg" bg="panel-fade-gradient" bg-color="#c81717" bg-alpha="0.4">
+                        <clickable-text on-click="left_x_click" text="~left_x_text" align="Midline" size-delta-x="20"/>
                     </background>
                     <text text="X" align="Center" face-color="#c81717"/>
-                    <background bg="panel-fade-gradient" bg-color="#c81717" bg-alpha="0.4" local-scale="-1 -1 1">
-                        <clickable-text text="0.0" align="Center" size-delta-x="20" local-scale="-1 -1 1"/>
+                    <background id="right_x_bg" bg="panel-fade-gradient" bg-color="#c81717" bg-alpha="0.4" local-scale="-1 -1 1">
+                        <clickable-text on-click="right_x_click" text="~right_x_text" align="Midline" size-delta-x="20" local-scale="-1 -1 1"/>
                     </background>
                 </horizontal>
                 <horizontal>
-                    <background bg="panel-fade-gradient" bg-color="#00b616" bg-alpha="0.4">
-                        <clickable-text text="0.0" align="Center" size-delta-x="20"/>
+                    <background id="left_y_bg" bg="panel-fade-gradient" bg-color="#00b616" bg-alpha="0.4">
+                        <clickable-text on-click="left_y_click" text="~left_y_text" align="Midline" size-delta-x="20"/>
                     </background>
                     <text text="Y" align="Center" face-color="#00b616"/>
-                    <background bg="panel-fade-gradient" bg-color="#00b616" bg-alpha="0.4" local-scale="-1 -1 1">
-                        <clickable-text text="0.0" align="Center" size-delta-x="20" local-scale="-1 -1 1"/>
+                    <background id="right_y_bg" bg="panel-fade-gradient" bg-color="#00b616" bg-alpha="0.4" local-scale="-1 -1 1">
+                        <clickable-text on-click="right_y_click" text="~right_y_text" align="Midline" size-delta-x="20" local-scale="-1 -1 1"/>
                     </background>
                 </horizontal>
                 <horizontal>
-                    <background bg="panel-fade-gradient" bg-color="#268ed2" bg-alpha="0.4">
-                        <clickable-text text="0.0" align="Center" size-delta-x="20"/>
+                    <background id="left_z_bg" bg="panel-fade-gradient" bg-color="#268ed2" bg-alpha="0.4">
+                        <clickable-text on-click="left_z_click" text="~left_z_text" align="Midline" size-delta-x="20"/>
                     </background>
                     <text text="Z" align="Center" face-color="#268ed2"/>
-                    <background bg="panel-fade-gradient" bg-color="#268ed2" bg-alpha="0.4" local-scale="-1 -1 1">
-                        <clickable-text text="0.0" align="Center" size-delta-x="20" local-scale="-1 -1 1"/>
+                    <background id="right_z_bg" bg="panel-fade-gradient" bg-color="#268ed2" bg-alpha="0.4" local-scale="-1 -1 1">
+                        <clickable-text on-click="right_z_click" text="~right_z_text" align="Midline" size-delta-x="20" local-scale="-1 -1 1"/>
                     </background>
                 </horizontal>
                 <horizontal>
-                    <button text="Reset L" face-color="red" pref-width="15"/>
-                    <button text="Reset" face-color="red" pref-width="15"/>
-                    <button text="Reset R" face-color="red" pref-width="15"/>
+                    <button on-click="reset_l_click" text="~reset_l_text" face-color="red" pref-width="15"/>
+                    <button on-click="reset_cur_click" interactable="~any_axis_selected" text="~reset_cur_text" face-color="red" pref-width="15"/>
+                    <button on-click="reset_r_click" text="~reset_r_text" face-color="red" pref-width="15"/>
                 </horizontal>
             </vertical>
             
@@ -49,24 +49,24 @@
             
             <vertical pref-width="26" pad="1" bg="round-rect-panel" bg-alpha="0.5">
                 <horizontal>
-                    <button text="- 0.1" pref-width="10" pref-height="8"/>
-                    <button text="+ 0.1" pref-width="10" pref-height="8"/>
+                    <button on-click="minus_0_1" interactable="~any_axis_selected" text="- 0.1" pref-width="10" pref-height="8"/>
+                    <button on-click="add_0_1" interactable="~any_axis_selected" text="+ 0.1" pref-width="10" pref-height="8"/>
                 </horizontal>
                 <horizontal>
-                    <button text="- 0.5" pref-width="10" pref-height="8"/>
-                    <button text="+ 0.5" pref-width="10" pref-height="8"/>
+                    <button on-click="minus_0_5" interactable="~any_axis_selected" text="- 0.5" pref-width="10" pref-height="8"/>
+                    <button on-click="add_0_5" interactable="~any_axis_selected" text="+ 0.5" pref-width="10" pref-height="8"/>
                 </horizontal>
                 <horizontal>
-                    <button text="- 1.0" pref-width="10" pref-height="8"/>
-                    <button text="+ 1.0" pref-width="10" pref-height="8"/>
+                    <button on-click="minus_1" interactable="~any_axis_selected" text="- 1.0" pref-width="10" pref-height="8"/>
+                    <button on-click="add_1" interactable="~any_axis_selected" text="+ 1.0" pref-width="10" pref-height="8"/>
                 </horizontal>
                 <horizontal>
-                    <button text="- 5.0" pref-width="10" pref-height="8"/>
-                    <button text="+ 5.0" pref-width="10" pref-height="8"/>
+                    <button on-click="minus_5" interactable="~any_axis_selected" text="- 5.0" pref-width="10" pref-height="8"/>
+                    <button on-click="add_5" interactable="~any_axis_selected" text="+ 5.0" pref-width="10" pref-height="8"/>
                 </horizontal>
                 <horizontal>
-                    <button text="- 10" pref-width="10" pref-height="8"/>
-                    <button text="+ 10" pref-width="10" pref-height="8"/>
+                    <button on-click="minus_10" interactable="~any_axis_selected" text="- 10" pref-width="10" pref-height="8"/>
+                    <button on-click="add_10" interactable="~any_axis_selected" text="+ 10" pref-width="10" pref-height="8"/>
                 </horizontal>
             </vertical>
         </horizontal>

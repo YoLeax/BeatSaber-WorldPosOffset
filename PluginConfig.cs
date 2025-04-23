@@ -48,6 +48,9 @@ internal class PluginConfig
 
     internal void Init()
     {
+        if (CurPresetIndex < 0) CurPresetIndex = 0;
+        if (CurPresetIndex >= MaxPresetCount) CurPresetIndex = MaxPresetCount - 1;
+        
         int presetCount = Presets.Count;
         int index = 0;
         while (index < MaxPresetCount && index < presetCount)
@@ -61,6 +64,8 @@ internal class PluginConfig
             ++index;
         }
     }
+
+    public Preset CurPreset => Presets[CurPresetIndex];
     
     public class Preset
     {
