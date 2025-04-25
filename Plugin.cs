@@ -1,6 +1,8 @@
-﻿using IPA;
+﻿using System.Reflection;
+using IPA;
 using IPA.Config.Stores;
 using IPA.Loader;
+using HarmonyLib;
 using SiraUtil.Zenject;
 using WorldPosOffset.Installers;
 using IpaLogger = IPA.Logging.Logger;
@@ -12,6 +14,9 @@ namespace WorldPosOffset;
 internal class Plugin
 {
     internal static IpaLogger Log { get; private set; } = null!;
+    
+    private Harmony harmony;
+    private Assembly executingAssembly = Assembly.GetExecutingAssembly();
 
     // Methods with [Init] are called when the plugin is first loaded by IPA.
     // All the parameters are provided by IPA and are optional.
@@ -24,7 +29,10 @@ internal class Plugin
 
         // Creates an instance of PluginConfig used by IPA to load and store config values
         var pluginConfig = ipaConfig.Generated<PluginConfig>();
+        PluginConfig.Instance = pluginConfig;
         pluginConfig.Init();
+        
+        harmony = new Harmony("com.YoLeax.BeatSaber.WorldPosOffset");
 
         // Instructs SiraUtil to use this installer during Beat Saber's initialization
         // The PluginConfig is used as a constructor parameter for AppInstaller, so pass it to zenjector.Install()
@@ -35,4 +43,10 @@ internal class Plugin
 
         Log.Info($"{pluginMetadata.Name} {pluginMetadata.HVersion} initialized.");
     }
+    
+    [OnStart]
+    public void OnApplicationStart() => harmony.PatchAll(executingAssembly);
+
+    [OnExit]
+    public void OnApplicationQuit() => harmony.UnpatchSelf();
 }

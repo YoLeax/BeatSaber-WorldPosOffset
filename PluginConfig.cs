@@ -19,6 +19,8 @@ internal class PluginConfig
     // public virtual Color TheColor { get; set; } = new Color(0.12f, 0.34f, 0.56f);
 
     public const int MaxPresetCount = 5;
+    
+    internal static PluginConfig? Instance { get; set; }
 
     public virtual bool Enabled { get; set; } = false;
     public virtual int CurPresetIndex { get; set; } = 0;
