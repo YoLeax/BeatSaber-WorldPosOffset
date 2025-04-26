@@ -7,20 +7,20 @@
     <PluginId>WorldPosOffset</PluginId>
     <PluginName>WorldPosOffset</PluginName>
     <Authors>YoLeax</Authors>
-    <Version>0.0.1</Version>
-    <GameVersion>1.39.1</GameVersion>
-    <Description>Adjust saber world position offset</Description>
+    <Version>1.0.0</Version>
+    <GameVersion>1.38.0</GameVersion>
+    <Description>Independently adjust the world position offsets of the left / right sabers.</Description>
     <!--<PluginIcon></PluginIcon>-->
-    <!--<ProjectSource></ProjectSource>-->
+    <ProjectSource>https://github.com/YoLeax/BeatSaber-WorldPosOffset</ProjectSource>
     <!--<ProjectHome></ProjectHome>-->
     <!--<DonateUrl></DonateUrl>-->
   </PropertyGroup>
 
   <!-- Plugin Dependencies -->
   <ItemGroup>
-    <DependsOn Include="BSIPA" Version="^4.3.0"/>
-    <DependsOn Include="BeatSaberMarkupLanguage" Version="^1.12.0"/>
-    <DependsOn Include="SiraUtil" Version="^3.1.0"/>
+    <DependsOn Include="BSIPA" Version="^4.3.5"/>
+    <DependsOn Include="BeatSaberMarkupLanguage" Version="^1.12.2"/>
+    <DependsOn Include="SiraUtil" Version="^3.1.12"/>
   </ItemGroup>
   
   <PropertyGroup>
