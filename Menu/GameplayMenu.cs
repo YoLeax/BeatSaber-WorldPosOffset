@@ -73,7 +73,7 @@ internal class GameplayMenu : IInitializable, ITickable, IDisposable, INotifyPro
     // time or when the game restarts internally, such as when settings are applied.
     public void Initialize()
     {
-        GameplaySetup.Instance.AddTab(MenuName, ResourcePath, this);
+        GameplaySetup.instance.AddTab(MenuName, ResourcePath, this);
         
         for (int i = 0; i < PluginConfig.MaxPresetCount; ++i)
         {
@@ -90,10 +90,10 @@ internal class GameplayMenu : IInitializable, ITickable, IDisposable, INotifyPro
 
     public void Dispose()
     {
-        if (GameplaySetup.Instance != null)
+        if (GameplaySetup.instance != null)
         {
             _cfg.Changed();
-            GameplaySetup.Instance.RemoveTab(MenuName);
+            GameplaySetup.instance.RemoveTab(MenuName);
         }
     }
 
